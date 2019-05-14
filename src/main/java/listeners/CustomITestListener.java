@@ -1,6 +1,7 @@
 package listeners;
 
 import io.qameta.allure.Allure;
+import io.qameta.allure.model.Link;
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -28,11 +29,13 @@ public class CustomITestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
+        Allure.addLinks(new Link().withName("Link to check manually").withUrl("http://vns.lpnu.ua/login/index.php"));
         logTestRunStatus(iTestResult, "PASSED");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
+        Allure.addLinks(new Link().withName("Link to check manually").withUrl("http://vns.lpnu.ua/login/index.php"));
         new Attachments().
                 attachScreenshot();
         String allureTestCaseJsonFilePartialName;
