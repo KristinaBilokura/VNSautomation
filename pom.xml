@@ -14,7 +14,7 @@
         <org.testng>6.13.1</org.testng>
         <log4j>1.2.17</log4j>
         <surefire.plugin.version>2.21.0</surefire.plugin.version>
-        <compiler.plugin.version>3.7.0</compiler.plugin.version>
+        <compiler.plugin.version>3.5.1</compiler.plugin.version>
         <allure.adaptor.version>1.5.4</allure.adaptor.version>
         <allure.version>2.6.0</allure.version>
         <allure.report.plugin.verion>2.9</allure.report.plugin.verion>
@@ -23,6 +23,9 @@
         <allure.results.directory>
             ${project.build.directory}/allure-results
         </allure.results.directory>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
     </properties>
 
     <build>
@@ -30,7 +33,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${compiler.plugin.version}</version>
+                <version>3.3</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
