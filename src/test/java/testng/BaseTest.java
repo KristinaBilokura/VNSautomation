@@ -3,11 +3,13 @@ package testng;
 import driver.DriverFactory;
 import listeners.CustomITestListener;
 import org.testng.annotations.*;
+import utils.retrier.CustomRetryListener;
+
 import java.lang.reflect.Method;
 
 import static pageObjects.AbstractPage.setWebDriverWaitTime;
 
-@Listeners(CustomITestListener.class)
+@Listeners({CustomITestListener.class,CustomRetryListener.class})
 public abstract class BaseTest extends DriverFactory {
 
     @Parameters({"browserName", "webDriverWaitTime"})
