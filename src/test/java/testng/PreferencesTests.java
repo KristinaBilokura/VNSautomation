@@ -41,7 +41,7 @@ public class PreferencesTests extends BaseTest {
                 verifyUserLoggedIn();
         new ChangePasswordPage().
                 getChangePasswordPage().
-                changePassword("", passwordRandom, passwordRandom).
+                changePassword("18.10.1997", passwordRandom, passwordRandom).
                 verifyRequireMessageDisplayed();
 
     }

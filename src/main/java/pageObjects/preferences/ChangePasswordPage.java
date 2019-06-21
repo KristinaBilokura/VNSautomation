@@ -3,6 +3,7 @@ package pageObjects.preferences;
 import consts.Constants;
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import pageObjects.AbstractPage;
@@ -17,7 +18,7 @@ public class ChangePasswordPage extends AbstractPage {
     private By newPassword = By.id("id_newpassword1");
     private By newPasswordConfirm = By.id("id_newpassword2");
     private By submitbutton = By.id("id_submitbutton");
-
+    private static final Logger LOGGER = Logger.getLogger(ChangePasswordPage.class);
     public static String passwordRandom = RandomStringUtils.randomAlphabetic(Constants.Number.NEW_PASSWORD_RANDOM_LENGTH);
 
     @Step("Get ChangePasswordPage page")
@@ -30,7 +31,9 @@ public class ChangePasswordPage extends AbstractPage {
     public ChangePasswordPage changePassword(final String studPassword, final String newStudPassword,
                                              final String newStudPassword2) {
         getElement(currentPassword, VISIBLE).sendKeys(studPassword);
+        LOGGER.info("New password "+ newStudPassword);
         getElement(newPassword, VISIBLE).sendKeys(newStudPassword);
+        LOGGER.info("New password2 "+ newStudPassword2);
         getElement(newPasswordConfirm, VISIBLE).sendKeys(newStudPassword2);
         getElement(submitbutton, CLICKABLE).click();
         return this;
