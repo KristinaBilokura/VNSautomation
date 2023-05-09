@@ -11,7 +11,7 @@
     <properties>
         <webdriver.manager.version>2.1.0</webdriver.manager.version>
         <org.seleniumhq.selenium>3.11.0</org.seleniumhq.selenium>
-        <org.testng>6.13.1</org.testng>
+        <org.testng>7.5.1</org.testng>
         <log4j>1.2.17</log4j>
         <surefire.plugin.version>2.21.0</surefire.plugin.version>
         <compiler.plugin.version>3.5.1</compiler.plugin.version>
